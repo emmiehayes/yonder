@@ -38,6 +38,24 @@ RSpec.configure do |config|
        with.library :rails
      end
    end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+      provider: "google_oauth2",
+      uid: "12345678910",
+      info: {
+        email: "emmiehayes2@gmail.com",
+        first_name: "Emmie",
+        last_name: "Hayes"
+      },
+      credentials: {
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        expires_at: DateTime.now,
+      }
+    })
+  end
  
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
