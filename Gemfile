@@ -16,12 +16,13 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara'
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'simplecov'
 end
 
