@@ -5,7 +5,7 @@ describe 'visitor visiting "/"' do
 
     visit "/"
 
-    expect(page).to have_content("Yonder")
-    expect(page).to have_content("Go where the weather takes you")
+    expect(page).to have_content("YONDER")
+    expect(page).to have_content("Go where the weather takes you.")
   end
 end
