@@ -5,12 +5,11 @@ describe "user visiting root page" do
     stub_omniauth
 
     visit root_path
-
-    expect(page).to have_link("Sign in with Google")
     
-    click_link "Sign in with Google"
+    click_button "Sign in with Google"
 
+    expect(current_path).to eq('/dashboard')
     expect(page).to have_content("Emmie Hayes")
-    expect(page).to have_link("Sign Out")
+    expect(page).to have_button("Sign Out")
   end
 end
