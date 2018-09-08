@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
   
- resources :users, only: [:new, :create, :edit, :update] do 
-   resources :activities
+ resources :users, only: [:new, :create, :edit, :update, :show] do 
+   resources :activities, except: [:index]
  end
 
 end

@@ -1,25 +1,23 @@
-<!-- Hero content: will be in the middle -->
+<section class="hero is-primary">
   <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">HELLO <%= @user.first_name %></h1>
-      <h2 class="subtitle">What would you like to do today?</h2>
-    </div>
-    <div>
-      <a class="control"><%= button_to 'Create Activity', new_user_activity_path(@user), class: "button is-outlined is-medium is-primary" %></a>
-    </div>
-    <div class="container has-text-centered">
-      <% @user.activities.each do |activity| %>
-        <a class="control"><%= button_to activity.name, logout_path, method: :get, class: "button is-outlined is-medium is-warning" %></a>
-        <% end %>
+    <div class="container">
+      <h1 class="title has-text-weight-light">
+        What would you like to do today?
+      </h1>
+      <h2 class="subtitle has-text-weight-light">
+        Choose one of your activities below or make a new one.
+      </h1>
     </div>
   </div>
-
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-          <a>Created by Emmie Hayes</a>
+</section>
+<section class="hero is-white">
+  <div class="hero-body">
+    <div class="container">
+    <% current_user.activities.each do |activity| %>
+      <div class="field">
+        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), class: "button is-large is-light is-hovered is-focused" %></a>
       </div>
-    </nav>
+    <% end %>
+   </div>
   </div>
 </section>

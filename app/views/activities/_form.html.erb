@@ -1,0 +1,41 @@
+<section class="hero is-white is-small">
+  <div class="hero-body">
+    <div class="container">
+      <%= form_for [:user, @activity] do |f| %>
+        <div class="field">
+          <div class="control">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "input is-medium is-grey" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.label :high %>
+            <%= f.number_field :high, class: "input is-medium is-grey" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.label :low %>
+            <%= f.number_field :low, class: "input is-medium is-grey" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= f.label :sky %><br>
+            <div class="select">
+              <%= f.select :sky, options_for_select([['Snow'], ['Rain'], ['Sunshine'], ['Cloudy']], selected: @activity.sky) %>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <class="control"><%= f.submit 'Save', class: "button is-primary is-outlined"%></p>
+        </div>
+        <% end %>
+        <br>
+        <class="control"><%= button_to 'Cancel', :back, method: :get, class: "button is-outlined is-link"%></p>
+      </div>
+    </div>
+  </div>
+</section>
+

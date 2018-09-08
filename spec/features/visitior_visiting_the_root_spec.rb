@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'visitor visiting "/"' do
-  it 'will see a landing page' do
+  scenario 'sees a landing page' do
 
     visit '/'
 
