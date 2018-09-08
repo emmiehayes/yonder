@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController
 
   def show 
-     @google_user = User.find(session[:id]) if current_user
+    if current_user
+     @user = User.find(current_user[:id])
+    end
   end
 end

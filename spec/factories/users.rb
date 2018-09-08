@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :user do
-    provider "MyString"
-    uid "MyString"
-    email "MyString"
-    first_name "MyString"
-    last_name "MyString"
-    token "MyString"
-    refresh_token "MyString"
-    oauth_expires_at "2018-09-06 13:05:01"
+    provider { "google_oauth2" }
+    uid { Faker::Number.number(10) }
+    email { Faker::Internet.email }
+    first_name { Faker::StarWars.character }
+    last_name { Faker::StarWars.character }
+    token { Faker::Number.number(10) }
+    refresh_token { Faker::Number.number(10) }
+    oauth_expires_at { Faker::Time.between(2.days.ago, Time.now, :all) }
   end
 end

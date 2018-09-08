@@ -1,8 +1,13 @@
 <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title">HELLO <%= @google_user.first_name %></h1>
-      <h2 class="subtitle">Go where the weather takes you.</h2>
+      <h1 class="title">HELLO <%= @user.first_name %></h1>
+      <h2 class="subtitle">What would you like to do today?</h2>
+    </div>
+    <div class="container has-text-centered">
+      <% @user.activities.each do |activity| %>
+        <a class="control"><%= button_to activity.name, logout_path, method: :get, class: "button is-outlined is-medium is-warning" %></a>
+        <% end %>
     </div>
   </div>
 
