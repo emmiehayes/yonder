@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   delete '/logout',                 to: 'sessions#destroy'
 
   get '/dashboard', to: 'dashboard#show'
+  
+ resources :users, only: [:new, :create, :edit, :update] do 
+   resources :activities
+ end
+
 end

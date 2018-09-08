@@ -15,6 +15,8 @@ describe 'user visiting their dashboard' do
     expect(@user.activities.count).to eq(0)
     
     click_button 'Create Activity'
+    
+    expect(current_path).to eq(new_user_activities_path(@user))
 
     within(".activity_form") do
       fill_in :name, with: 'Rock Climbing'
