@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
 helper_method :activity
 
   def activity
+    #not to be called in view, used because the new, show, edit methods all kick off this helper method
     @memoized_activity ||= Activity.find_or_initialize_by(id: params[:id])
   end
 
@@ -17,6 +18,7 @@ helper_method :activity
   end
 
   def update 
+    activity = Activity.find(params[:id])
     activity.update(activity_params)
     if activity.save
       flash[:successs] = "Activity successfully updated."
