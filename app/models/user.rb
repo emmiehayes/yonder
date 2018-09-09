@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :activities
+  has_many :activities, dependent: :destroy
   validates_presence_of :first_name, :last_name, :email
   
   def self.from_omniauth(auth)
