@@ -15,7 +15,7 @@
     <div class="container">
     <% current_user.activities.each do |activity| %>
       <div class="field">
-        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), class: "button is-large is-light is-hovered is-focused" %></a>
+        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-light is-hovered is-focused" %></a>
       </div>
     <% end %>
    </div>

@@ -21,6 +21,9 @@
         </div>
       <div class="navbar-end">
         <% if current_user %>
+         <div class="navbar-item">
+            <a class="control"><%= button_to 'Dashboard', dashboard_path, method: :get, class: "button is-outlined is-medium is-primary" %></a>
+          </div>
           <div class="navbar-item">
             <a class="control"><%= button_to 'Create Activity', new_user_activity_path(current_user), method: :get, class: "button is-outlined is-medium is-danger" %></a>
           </div>
