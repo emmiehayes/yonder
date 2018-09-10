@@ -3,46 +3,49 @@
   <head>
     <title>Yonder</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300|Oswald|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-</head>
+  </head>
 
-<body>
+  <body>
   <!-- Nav Bar -->
-  <header class="navbar is-dark"> 
+  <header class="navbar is-info"> 
     <div class="navbar-menu">
+      <% if current_user %>
+  <!--Left -->
       <div class="navbar-start">
-        <% if current_user %>
-          <div class="navbar-item">
-            Signed in as <%= current_user.first_name %>
-          </div>
-        <% end %>
-        </div>
-      <div class="navbar-end">
-        <% if current_user %>
-         <div class="navbar-item">
-            <a class="control"><%= button_to 'Dashboard', dashboard_path, method: :get, class: "button is-outlined is-medium is-primary" %></a>
-          </div>
-          <div class="navbar-item">
-            <a class="control"><%= button_to 'Create Activity', new_user_activity_path(current_user), method: :get, class: "button is-outlined is-medium is-danger" %></a>
-          </div>
-          <div class="navbar-item">
-            <a class="control"><%= button_to 'Sign Out', logout_path, method: :delete, class: "button is-outlined is-medium is-warning" %></a>
-          </div>
-        <% else %>
-          <div class="navbar-item">
-            <a class="control"><%= button_to 'Sign in with Google', '/auth/google_oauth2', method: :get, class: "button is-outlined is-medium is-warning" %></a>
-          </div>
-        <% end %>
+        <div class="navbar-item">
+          <img src="https://cl.ly/eb4bc8af8152/Screen%20Shot%202018-09-10%20at%2012.26.22%20PM.jpg", alt="yonder logo width="112" height="28"">
         </div>
       </div>
+  <!--Right -->
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="control"><%= button_to 'Dashboard', dashboard_path, method: :get, class: "button is-outlined is-small is-primary" %></a>
+        </div>
+        <div class="navbar-item">
+          <a class="control"><%= button_to 'Create Activity', new_user_activity_path(current_user), method: :get, class: "button is-outlined is-small is-primary" %></a>
+        </div>
+        <div class="navbar-item">
+          <a class="control"><%= button_to 'Sign Out', logout_path, method: :delete, class: "button is-outlined is-small is-warning" %></a>
+        </div>
+      <% else %>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="control"><%= button_to 'Sign in with Google', '/auth/google_oauth2', method: :get, class: "button is-outlined is-warning" %></a>
+          </div>
+        </div>
+      <% end %>
     </div>
   </header>
   
-   <!--Flash -->
+  <!--WILL CHANGE WITH IMPLEMENTATION OF JS -->
+  <!--Flash -->
     <% flash.each do |key, msg| %>
-    <% if key == 'alert' %>%
+    <% if key == 'alert' %>
       <div class="notification is-danger">
         <%= content_tag :div, msg, id: key %>
     <% elsif key == 'success' %>
@@ -53,5 +56,5 @@
     <% end %>
 
     <%= yield %>
-</body>
+  </body>
 </html>

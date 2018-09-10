@@ -1,28 +1,31 @@
-<section class="hero is-primary">
+<!--Activity Title -->
+<section class="hero is-info">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        <%= activity.title %>
+      <h1 class="title has-text-weight-light">
+        <%= activity.title.capitalize %>
       </h1>
     </div>
   </div>
 </section>
 <section class="hero is-white">
   <div class="hero-body">
+    
+<!--Activity Preferences -->
     <div class="container">
-      <h1 class="sub-title">
       <ul>
-       <li>Sky: <%= activity.sky %></li>
-       <li>High Temperature: <%= activity.high %></li>
-       <li>Low Temperature: <%= activity.low %></li>
-       </ul><br>
-      </h1>
-       <div class="container is-fluid">
-        <div class='field is-grouped'>
-        <a class="control"><%= button_to 'Edit', edit_user_activity_path(current_user, activity), method: 'get', class: "button is-outlined is-dark" %></a>
-        <a class="control"><%= button_to 'Delete', user_activity_path(current_user, activity), method: "delete",  class: "button is-outlined is-dark", data: {confirm: 'Are you sure you want to delete this activity?'} %></a>
-        <a class="control"><%= button_to 'Find Locations', :back, method: :get, class: "button is-outlined is-dark"%></p>
-      </div>
+        <li>Sky: <%= activity.sky %></li>
+        <li>High Temperature: <%= activity.high %></li>
+        <li>Low Temperature: <%= activity.low %></li>
+      </ul>
+    </div><br>
+
+<!--Activity Button Options -->
+    <div class="container">
+      <div class='field is-grouped'>
+        <a class="control"><%= button_to 'Edit', edit_user_activity_path(current_user, activity), method: 'get', class: "button is-outlined is-gray" %></a>
+        <a class="control"><%= button_to 'Delete', user_activity_path(current_user, activity), method: "delete",  class: "button is-outlined is-gray", data: {confirm: 'Are you sure you want to delete this activity?'} %></a>
+        <a class="control"><%= button_to 'Search', locations_by_preference_path, method: :get, class: "button is-outlined is-gray"%></p>
       </div>
     </div>
   </div>

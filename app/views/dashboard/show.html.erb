@@ -1,22 +1,23 @@
-<section class="hero is-primary">
+<!--Welcome Prompt Banner -->
+<section class="hero is-info">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title has-text-weight-light">
-        What would you like to do today?
-      </h1>
-      <h2 class="subtitle has-text-weight-light">
-        Choose one of your activities below or make a new one.
-      </h1>
+      <h1 class="title has-text-weight-light"><%= current_user.first_name.capitalize %>, what would you like to do today?</h1>
+      <h2 class="subtitle has-text-weight-light">Choose one of your activities below or make a new one.</h2>
     </div>
   </div>
 </section>
+
+<!--User Activities Index -->
 <section class="hero is-white">
   <div class="hero-body">
     <div class="container">
     <% current_user.activities.each do |activity| %>
+    <div class='activity'>
       <div class="field">
-        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-light is-hovered is-focused" %></a>
-      </div>
+        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-warning is-outlined" %></a>
+      </div><br>
+    </div>
     <% end %>
    </div>
   </div>

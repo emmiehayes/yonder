@@ -13,4 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+$info: rgb(3, 63, 79);
+$warning: #f0aa14;
+$dark: #19193B;
+$font-family: 'Open Sans', sans-serif;
+$font-family: 'Oswald', sans-serif;
+$font-family: 'Roboto', sans-serif;
 @import "bulma";
