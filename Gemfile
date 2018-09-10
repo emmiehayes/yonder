@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bulma-rails', '~> 0.7.1'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'geocoder'
 
 
 group :development, :test do

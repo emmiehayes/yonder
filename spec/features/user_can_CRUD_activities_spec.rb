@@ -3,13 +3,13 @@ require 'rails_helper'
 describe 'user visiting their dashboard' do
   before :each do
     @user = create(:user)
-    @activity = @user.activities.create(title: 'climbing', high: '80', low: '75', sky: 'Sunshine')
+    @activity = @user.activities.create(title: 'Climbing', high: '80', low: '75', sky: 'Sunshine')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit '/dashboard'
   end
 
   scenario 'can successfully create and delete activity' do
-    title = 'skiing'
+    title = 'Skiing'
     high = '60'
     low = '39'
     sky = 'Snow' 
@@ -61,7 +61,7 @@ describe 'user visiting their dashboard' do
   end
 
   scenario 'can update an activity by changing their preferences' do 
-    update_title = 'rock climbing'
+    update_title = 'Rock climbing'
     update_high = '90'
 
       click_button @activity.title
