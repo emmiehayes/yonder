@@ -14,12 +14,12 @@ activity_2 = Activity.create(title: "Rock Climbing")
 pin_2 = Pin.new(city: "Golden", state: "Colorado", latitude: 39.7555, longitude: 105.2211)
 activity_pin_2 = ActivityPin.create(activity_id: 2, pin_id: 2)
 
-activity_3 = Activity.create(title: "Hiking")
+activity_3 = Activity.create(title: "Trail Hiking")
 pin_3 = Pin.new(city: "Boulder", state: "Colorado", latitude: 40.0150, longitude: 105.2705)
 activity_pin_3 = ActivityPin.create(activity_id: 3, pin_id: 3)
 
 
-activity_4 = Activity.create(title: "Skiing")
+activity_4 = Activity.create(title: "Snow Skiing")
 pin_4 = Pin.new(city: "Breckenridge", state: "Colorado", latitude: 39.4817, longitude: 106.0384)
 activity_pin_4 = ActivityPin.create(activity_id: 4, pin_id: 4)
 

@@ -1,13 +1,13 @@
+
 <!--Activities Index -->
 <div class="section">
   <div class="container is-fluid">
   <div class="tile is-ancestor">
     <div class="tile is-parent">
-      <div class="tile is-child">
-        <% current_user.activities.each do |activity| %>
-          <div class="field">
-            <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-warning is-outlined" %></a>
-          </div>
+      <% @activities.each do |activity| %>
+        <div class="tile is-child">
+          <a class="control"><%= button_to activity.title, dashboard_path, method: :get, class: "button is-large is-warning is-outlined" %></a>
+        </div>
         <% end %>
       </div>
     </div>
@@ -16,7 +16,7 @@
 </div>
 <div class="section">
   <div class="tile is-parent">
-        <div class="tile is-child box">
+        <div class="tile is-child box" id="map">
           <p class="title has-text-weight-light">Map</p>
         </div>
       </div>
