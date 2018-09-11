@@ -1,24 +1,46 @@
-<!--Welcome Prompt Banner -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title has-text-weight-light"><%= current_user.first_name.capitalize %>, what would you like to do today?</h1>
-      <h2 class="subtitle has-text-weight-light">Choose one of your activities below or make a new one.</h2>
+<!--Activities Index -->
+<div class="section">
+  <div class="container is-fluid">
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <% current_user.activities.each do |activity| %>
+          <div class="field">
+            <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-warning is-outlined" %></a>
+          </div>
+        <% end %>
+      </div>
+    </div>
     </div>
   </div>
-</section>
+</div>
+<div class="section">
+  <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title has-text-weight-light">Map</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title has-text-weight-light">Weather Conditions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title has-text-weight-light">Local Gear Shops</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!--User Activities Index -->
-<section class="hero is-white">
-  <div class="hero-body">
-    <div class="container">
-    <% current_user.activities.each do |activity| %>
-    <div class='activity'>
-      <div class="field">
-        <a class="control"><%= button_to activity.title, user_activity_path(current_user, activity), method: :get, class: "button is-large is-warning is-outlined" %></a>
-      </div><br>
-    </div>
-    <% end %>
-   </div>
-  </div>
-</section>
+
+

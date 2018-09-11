@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :current_zipcode
+  helper_method :current_user, :current_location
 
   def current_user 
     @current_user ||= User.find_by(id: session[:id]) if session[:id]
   end
 
-  def current_zipcode 
-    @current_zipcode = 80203
+ def current_location
+    @current_location ||=  if session[:id]
   end
 end
