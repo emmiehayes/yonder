@@ -16,7 +16,6 @@ gem 'bulma-rails', '~> 0.7.1'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'geocoder'
-gem 'leaflet-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
