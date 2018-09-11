@@ -31,7 +31,7 @@ helper_method :activity
 
   def destroy 
     activity = Activity.destroy(params[:id])
-    flash[:success] = "Successfully deleted #{activity.title}"
+    flash[:success] = "Successfully deleted #{activity.title} activity."
     redirect_to dashboard_path
   end
 

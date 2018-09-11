@@ -31,6 +31,7 @@ describe 'a user visiting their dashboard' do
       expect(page).to have_content("City: ")
       expect(page).to have_content("State: ")
       expect(page).to have_content("Zip: ")
+      expect(page).to have_content("Distance: ")
     end
   end
 end 

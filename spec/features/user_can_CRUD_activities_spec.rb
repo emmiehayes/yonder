@@ -8,7 +8,7 @@ describe 'user visiting their dashboard' do
     visit '/dashboard'
   end
 
-  scenario 'can successfully create and delete activity' do
+  scenario 'can successfully create and delete an activity' do
     title = 'Skiing'
     high = '60'
     low = '39'
@@ -42,7 +42,8 @@ describe 'user visiting their dashboard' do
 
     expect(current_path).to eq(dashboard_path)
     expect(@user.activities.count).to eq(1)
-    expect(@user.activities.include?('skiing')).to eq(false)
+    expect(@user.activities.include?('Skiing')).to eq(false)
+    expect(page).to have_content("Successfully deleted Skiing activity.")
   end
 
   scenario 'can make unsuccessful attempt to create new activity' do 
@@ -60,7 +61,7 @@ describe 'user visiting their dashboard' do
     expect(@user.activities.count).to eq(1)
   end
 
-  scenario 'can update an activity by changing their preferences' do 
+  scenario 'can update an activity' do 
     update_title = 'Rock climbing'
     update_high = '90'
 
@@ -77,6 +78,22 @@ describe 'user visiting their dashboard' do
     expect(page).to have_content("High Temperature: #{update_high}")
     expect(page).to have_content("Low Temperature: #{@activity.low}")
     expect(page).to have_content("Sky: #{@activity.sky}")
- 
+  end
+
+  scenario 'can make unsuccessful attempt to update an activity' do 
+    update_title = 'Rock climbing'
+    update_high = nil
+
+      click_button @activity.title
+  
+      click_button 'Edit'
+
+      fill_in "activity_title", with: update_title
+      fill_in "activity_high", with: update_high
+
+      click_button 'Save'
+
+    expect(page).to have_content('Missing required fields, activity was not updated.')
+    expect(page).to have_content('Edit Activity')
   end
 end
