@@ -24,6 +24,10 @@
   <!--Right -->
       <div class="navbar-end">
         <div class="navbar-item">
+          <a class="control"><%= button_to 'Dashboard', dashboard_path, method: :get, class: "button is-outlined is-small is-primary" %></a>
+        </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
           <a class="control"><%= button_to 'Sign Out', logout_path, method: :delete, class: "button is-outlined is-small is-warning" %></a>
         </div>
       <% else %>
