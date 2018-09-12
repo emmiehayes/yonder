@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180911232105) do
     t.string "token"
     t.string "refresh_token"
     t.datetime "oauth_expires_at"
+    t.string "activity_preference", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :token
       t.string :refresh_token
       t.datetime :oauth_expires_at
-
+      t.string :activity_preference, default: ""
       t.timestamps
     end
   end

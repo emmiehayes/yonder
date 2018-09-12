@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Yonder</title>
+    <!-- MapBox -->
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+      <!-- Fonts and FontAwesome -->
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300|Oswald|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
@@ -9,7 +14,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
   <!-- Nav Bar -->
   <header class="navbar is-info"> 
