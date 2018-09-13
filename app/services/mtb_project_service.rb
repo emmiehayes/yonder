@@ -12,7 +12,7 @@ class MtbProjectService
   private 
 
   def response 
-    conn.get("/data/get-trails?lat=#{@location.latitude}&lon=#{@location.longitude}&maxDistance=60&key=200346645-f1d7f667f2778b237eabd2b5ad68c975")
+    conn.get("/data/get-trails?lat=#{@location.latitude}&lon=#{@location.longitude}&maxDistance=60&key=#{ENV[MTB_API_KEY}")
   end
 
   def conn 
