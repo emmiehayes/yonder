@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Yonder</title>
+    <!-- MapBox -->
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+      <!-- Fonts and FontAwesome -->
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300|Oswald|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
@@ -9,7 +14,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
   <!-- Nav Bar -->
   <header class="navbar is-info"> 
@@ -26,9 +30,7 @@
         <div class="navbar-item">
           <a class="control"><%= button_to 'Dashboard', dashboard_path, method: :get, class: "button is-outlined is-small is-primary" %></a>
         </div>
-        <div class="navbar-item">
-          <a class="control"><%= button_to 'Create Activity', new_user_activity_path(current_user), method: :get, class: "button is-outlined is-small is-primary" %></a>
-        </div>
+      <div class="navbar-end">
         <div class="navbar-item">
           <a class="control"><%= button_to 'Sign Out', logout_path, method: :delete, class: "button is-outlined is-small is-warning" %></a>
         </div>
@@ -41,20 +43,6 @@
       <% end %>
     </div>
   </header>
-  
-  <!--WILL CHANGE WITH IMPLEMENTATION OF JS -->
-  <!--Flash -->
-    <% flash.each do |key, msg| %>
-    <% if key == 'alert' %>
-      <div class="notification is-danger">
-        <%= content_tag :div, msg, id: key %>
-    <% elsif key == 'success' %>
-      <div class="notification is-success">
-        <%= content_tag :div, msg, id: key %>
-    <% end %>
-    </div>
-    <% end %>
-
-    <%= yield %>
-  </body>
+<%=yield%>
+ </body>
 </html>
