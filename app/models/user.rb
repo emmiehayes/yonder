@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :email, :activity_preference
+  validates_presence_of :first_name, :last_name, :email
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
@@ -11,7 +11,6 @@ class User < ApplicationRecord
       user.token = auth.credentials.token 
       user.refresh_token = auth.credentials.refresh_token
       user.oauth_expires_at = auth.credentials.expires_at
-      user.activity_preference = 'default'
       user.save!
     end
   end

@@ -1,0 +1,18 @@
+<!--Search Bar Index -->
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container is-fluid has-text-centered">
+      <%= form_tag :search, method: :get, class: "form-search" do %>
+        <div class="form-group" id="select-preferences">
+          <div class="select is-info">
+            <%= collection_select :location, :id, Location.all, :id, :city  %>
+          </div>
+          <div class="select is-info">
+            <%= collection_select :activity, :id, Activity.all, :id, :title %>
+          </div>
+            <%= submit_tag "Trails Only", method: :get, class: "button is-outlined is-warning"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</section>

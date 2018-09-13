@@ -1,10 +1,13 @@
 class DashboardController < ApplicationController
 
-  def show
+  def index
     if current_user
-     @user = User.find(current_user[:id])
-     @activities = Activity.all
+      @user = User.find(current_user[:id])
     end
+  end
+
+  def show 
+    @presenter = SearchPresenter.new(params)
   end
 end
 

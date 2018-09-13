@@ -1,46 +1,44 @@
+<!--Search Bar Index -->
+<%= render partial: 'form' %>
 
-<!--Activities Index -->
-<div class="section">
-  <div class="container is-fluid">
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <% @activities.each do |activity| %>
-        <div class="tile is-child">
-          <a class="control"><%= button_to activity.title, dashboard_path, method: :get, class: "button is-large is-warning is-outlined" %></a>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    </div>
+<!--MapBox -->
+<br>
+<div class="container" id='map'>
+  <style>body { margin:2; padding:2; } #map {  width: 700px; height: 400px; }</style>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
+      const map = new mapboxgl.Map({
+      container: 'map',
+      style: "mapbox://styles/emmiehayes/cjlyepdnv4ifp2ssykm1t5dpr",
+      center: [-105.175832, 38.649444],
+      zoom: 6.2});
+  </script>
+</div>
+
+<br>
+
+<!--Trail List -->
+<div class="container">
+  <div class="title">
+    <h1>Trail Info</h1>
+  </div>
+  <div class='tails_in_range'>
+    <% @presenter.trails_in_range.each do |trail| %>
+      <ul>
+        <li>Trail: <%= trail.name %></li>
+        <li>Length: <%= trail.length %> mi</li>
+        <li>Location: <%= trail.location %></li>
+        <li>Ascent: <%= trail.ascent %> ft</li>
+        <li>Descent: <%= trail.descent %> ft</li>
+        <li>Highest Point: <%= trail.highest_point %> ft</li>
+        <li>Lowest Point: <%= trail.lowest_point %> ft</li>
+        <br>
+      </ul>
+    <% end %>
   </div>
 </div>
-<div class="section">
-  <div class="tile is-parent">
-        <div class="tile is-child box" id="map">
-          <p class="title has-text-weight-light">Map</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <div class="tile is-parent">
-        <div class="tile is-child box">
-          <p class="title has-text-weight-light">Weather Conditions</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <div class="tile is-parent">
-        <div class="tile is-child box">
-          <p class="title has-text-weight-light">Local Gear Shops</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 
 
 
