@@ -24,21 +24,48 @@
   </div>
   <div class='tails_in_range'>
     <% @presenter.trails_in_range.each do |trail| %>
+    <div class="box">
       <ul>
-        <li>Trail: <%= trail.name %></li>
-        <li>Length: <%= trail.length %> mi</li>
+        <li><strong><%= trail.name %></strong></li>
         <li>Location: <%= trail.location %></li>
+        <li>Length: <%= trail.length %> mi</li>
         <li>Ascent: <%= trail.ascent %> ft</li>
         <li>Descent: <%= trail.descent %> ft</li>
         <li>Highest Point: <%= trail.highest_point %> ft</li>
         <li>Lowest Point: <%= trail.lowest_point %> ft</li>
+        <li>Current Temperature: <%= trail.conditions.current %></li>
         <br>
-      </ul>
+        <p><strong>Tomorrow's Forecast:</strong> 
+          <table class="table has-content-centered is-striped is-hoverable is-bordered is-fullwidth">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Description</th>
+                <th>Min (°F)</th>
+                <th>Max (°F)</th>
+                <th>Humidity (%)</th>
+                <th>Winds (mph)</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% trail.conditions.format_next_day.map do |frame| %>
+              <tr>
+                <td><%= frame.time %></td>
+                <td><%= frame.description %></td>
+                <td><%= frame.temp_min %></td>
+                <td><%= frame.temp_max %></td>
+                <td><%= frame.humidity %></td>
+                <td><%= frame.winds %></td>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+      </div>
     <% end %>
   </div>
 </div>
-
-
-
-
-
+ 
+  
+    
+  
