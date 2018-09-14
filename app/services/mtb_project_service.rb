@@ -10,6 +10,7 @@ class MtbProjectService
   end
 
   private 
+  attr_reader :location, :activity
 
   def response 
     conn.get("/data/get-trails?lat=#{@location.latitude}&lon=#{@location.longitude}&maxDistance=60&key=#{ENV['MTB_API_KEY']}")
