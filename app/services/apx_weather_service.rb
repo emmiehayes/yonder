@@ -15,7 +15,7 @@ class ApxWeatherService < Service
   end
 
   def conn 
-    Faraday.new(url: "http://api.apixu.com") do |faraday|
+    Faraday.new(url: 'http://api.apixu.com') do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end

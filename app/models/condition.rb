@@ -5,11 +5,11 @@ class Condition
   end
 
   def day 
-    @condition[:date].to_datetime.strftime("%A")
+    @condition[:date].to_datetime.strftime('%A')
   end
 
   def date 
-    @condition[:date].to_datetime.strftime("%B %d, %Y")
+    @condition[:date].to_datetime.strftime('%B %d, %Y')
   end
 
   def temp_min 
@@ -34,7 +34,7 @@ class Condition
 
   def icon 
     path = (@condition[:day][:condition][:icon])
-    path.slice!("//cdn.apixu.com/") 
+    path.slice!('//cdn.apixu.com/') 
     path
   end
 
