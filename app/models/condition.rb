@@ -1,44 +1,41 @@
 class Condition 
-  attr_reader :temp_min, :temp_max, :humidity, :description, :winds, :date, :current_temp
 
   def initialize(condition)
     @condition = condition
   end
 
-  def current_temp
-    @condition[1]
+  def day 
+    @condition[:date].to_datetime.strftime("%A")
   end
 
   def date 
-    @condition[:dt_txt].to_datetime.strftime("%A %B %d, %Y")
-  end
-
-  def time 
-    @condition[:dt_txt].to_datetime.strftime("%I:%M %p")
-  end
-
-  def best_time?
-    ["06:00 AM","12:00 PM","06:00 PM"].include?(time)
+    @condition[:date].to_datetime.strftime("%B %d, %Y")
   end
 
   def temp_min 
-    @condition[:main][:temp_min].round
+    @condition[:day][:mintemp_f].round
   end 
 
   def temp_max 
-    @condition[:main][:temp_max].round
+    @condition[:day][:maxtemp_f].round
   end 
 
   def humidity
-    @condition[:main][:humidity]
+    @condition[:day][:avghumidity].round
   end
 
   def description 
-    @condition[:weather][0][:description]
+    @condition[:day][:condition][:text]
   end
   
-  def winds 
-    @condition[:wind][:speed].round
+  def max_winds 
+    @condition[:day][:maxwind_mph]
+  end
+
+  def icon 
+    path = (@condition[:day][:condition][:icon])
+    path.slice!("//cdn.apixu.com/") 
+    path
   end
 
   private 

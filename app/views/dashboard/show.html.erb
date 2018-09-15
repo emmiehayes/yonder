@@ -1,86 +1,122 @@
 <!--Search Bar Index -->
 <%= render partial: 'form' %>
+<br>
 
 <!--MapBox -->
-<br>
-<div class="container" id='map'>
-  <style>body { margin:2; padding:2; } #map {  width: 700px; height: 400px; }</style>
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
-      const map = new mapboxgl.Map({
-      container: 'map',
-      style: "mapbox://styles/emmiehayes/cjlyepdnv4ifp2ssykm1t5dpr",
-      center: [-105.175832, 38.649444],
-      zoom: 6.2});
-  </script>
+<div class="columns is-gapless">
+  <div class="column is-9">
+    <div class="container" id='map'>
+      <style> #map { width: 1000px; height: 400px; }</style>
+        <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
+          const map = new mapboxgl.Map({
+          container: 'map',
+          style: "mapbox://styles/emmiehayes/cjlyepdnv4ifp2ssykm1t5dpr",
+          center: [-105.175832, 38.649444],
+          zoom: 6.2});
+      </script>
+    </div>
+  </div>
+
+<!--Current Conditions -->
+  <div class="column is-9">
+    <div class="container">
+      <div class="box">
+        <div class="title">
+          <p><%= @presenter.city_state %> <%= image_tag (@presenter.current_city_weather[:condition][:icon]) %></p>
+        </div><hr>
+        <div class="subtitle">
+          <strong>Current Conditions:</strong>    
+          <ul>
+            <li>Skies: <%= @presenter.current_city_weather[:condition][:text] %></li>
+            <li>Feels Like: <%= @presenter.current_city_weather[:feelslike_f] %>˚</li>
+            <li>Humidity: <%= @presenter.current_city_weather[:humidity] %>%</li>
+            <li>Winds: <%= @presenter.current_city_weather[:wind_mph] %> mph</li>
+            <li>Precipitation: <%= @presenter.current_city_weather[:precip_in] %> inches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<br>
-
-<!--Trail List -->
-<div class="container">
-  <div class="title">
-    <h1>Trail Info</h1>
-  </div>
-  <div class='tails_in_range'>
-    <% @presenter.trails_in_range.each do |trail| %>
-    <div class="box">
-      <ul>
-        <li><strong><%= trail.name %></strong></li>
-        <li>Location: <%= trail.location %></li>
-        <li>Length: <%= trail.length %> mi</li>
-        <li>Ascent: <%= trail.ascent %> ft</li>
-        <li>Descent: <%= trail.descent %> ft</li>
-        <li>Highest Point: <%= trail.highest_point %> ft</li>
-        <li>Lowest Point: <%= trail.lowest_point %> ft</li>
-        <li>Current Temperature: <%= trail.conditions.current %></li>
-        <br>
-<!--Weather Table -->
-        <p><strong>Tomorrow's Forecast:</strong> 
-          <table class="table has-content-centered is-striped is-hoverable is-bordered is-fullwidth">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Description</th>
-                <th>Min (°F)</th>
-                <th>Max (°F)</th>
-                <th>Humidity (%)</th>
-                <th>Winds (mph)</th>
-              </tr>
-            </thead>
-            <tbody>
-            <% trail.conditions.format_next_day.map do |frame| %>
-              <tr>
-                <td><%= frame.time %></td>
-                <td><%= frame.description %></td>
-                <td><%= frame.temp_min %></td>
-                <td><%= frame.temp_max %></td>
-                <td><%= frame.humidity %></td>
-                <td><%= frame.winds %></td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
-        </p>
+<!--5 Day Forecast -->
+<div class=section>
+  <div class="columns">
+    <% @presenter.forecasted_city_weather.each do |day| %>
+      <div class="column">
+        <article class="message is-small is-warning">
+          <div class="message-header has-text-white">
+            <strong><%= day.day %></strong>
+          </div>
+          <div class="message-body">
+            <div class="columns">
+              <div class="column is-one-half">
+                <ul>
+                  <li>Skies:<%= day.description %></li>
+                  <li>Min: <%= day.temp_min %>˚F</li>
+                  <li>Max: <%= day.temp_max %>˚F</li>
+                  <li>Humidity: <%= day.humidity %>%</li>
+                  <li>Max Winds: <%= day.max_winds %> mph</li>
+                </ul>
+              </div>
+              <div="column is-offset-1">
+                <%= image_tag (day.icon) %>
+              </div>
+            <%-#don't close this div tag-%>
+          </div>
+        </article>
       </div>
     <% end %>
   </div>
-</div>
- 
- <br>
+<%-#don't close this div tag-%>
 
-<!--Gear Shops List -->
-<div class="container">
-  <div class="title">
-    <h1>Local Gear Shops</h1>
-  </div>
-    <div class='gear_in_range'>
-    <% @presenter.gear_in_range.each do |shop| %>
-      <div class="box">
-      <li><strong><%= link_to shop.name, shop.url  %></strong></li>
-      <li>Location: <%= shop.address %></li>
-      <li>Phone: <%= shop.phone_number %></li>
-    </div>
+<!--Trail List -->
+<div class=section>
+  <div class="columns">
+    <% @presenter.trails_in_range.each do |trail| %>
+      <div class="column">
+        <article class="message is-small is-primary">
+          <div class="message-header">
+            <strong><%= trail.name %></strong>
+          </div>
+          <div class="message-body">
+            <ul>
+              <li>Location: <%= trail.location %></li>
+              <li>Length: <%= trail.length %> mi</li>
+              <li>Ascent: <%= trail.ascent %> ft</li>
+              <li>Descent: <%= trail.descent %> ft</li>
+              <li>Highest Point: <%= trail.highest_point %> ft</li>
+              <li>Lowest Point: <%= trail.lowest_point %> ft</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     <% end %>
   </div>
-</div>
+ <%-#don't close this div tag-%>
+
+<!--Gear Shops List -->
+<% unless current_user.nil?%>
+  <div class=section>
+    <div class="columns">
+      <% @presenter.gear_in_range.each do |shop| %>
+        <div class="column">
+          <article class="message is-small is-info">
+            <div class="message-header">
+              <strong><%= link_to shop.name, shop.url  %></strong>
+            </div>
+            <div class="message-body">
+              <ul>
+                <li> <%= shop.address %></li>
+                <li>Phone: <%= shop.phone_number %></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+     
+

@@ -17,24 +17,20 @@ class Trail
   end 
   
   def ascent 
-    trail_data[:ascent]
+    trail_data[:ascent].to_s(:delimited)  
   end 
   
   def descent 
-    trail_data[:descent]
+    trail_data[:descent].to_s(:delimited)  
   end 
   
   def highest_point 
-    trail_data[:high]
+    trail_data[:high].to_s(:delimited)  
   end 
   
   def lowest_point 
-    trail_data[:low]
+    trail_data[:low].to_s(:delimited)  
   end 
-
-  def conditions 
-    ConditionSearch.new(trail_data)
-  end
   
   private 
   attr_reader :trail_data

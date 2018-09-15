@@ -13,7 +13,7 @@ class YelpService
   attr_reader :location, :activity
 
   def response 
-    conn.get("/v3/businesses/search?latitude=#{@location.latitude}&longitude=#{@location.longitude}&term=bike")
+    conn.get("/v3/businesses/search?latitude=#{@location.latitude}&longitude=#{@location.longitude}&limit=5&term=bike")
   end
 
   def conn 

@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
 
   def index
-    @user = User.find(current_user[:id])
+    user = User.new if current_user.nil?
+    user = User.find(current_user[:id]) if current_user
   end
 
   def show 
