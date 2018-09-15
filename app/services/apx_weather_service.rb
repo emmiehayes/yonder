@@ -1,20 +1,14 @@
-class ApxWeatherService 
-
-  def initialize(params)
-    @location = Location.find(params[:location][:id].to_i)
-    @activity = Activity.find(params[:activity][:id].to_i)
-  end
+class ApxWeatherService < Service
 
   def raw_current
-    JSON.parse(response.body, symbolize_names: true)[:current]
+    parse[:current]
   end
 
   def raw_forecast
-    JSON.parse(response.body, symbolize_names: true)[:forecast][:forecastday]
+    parse[:forecast][:forecastday]
   end
 
   private 
-  attr_reader :activity, :location
 
   def response 
     conn.get("/v1/forecast.json?key=#{ENV['APIXU_API_KEY']}&q=#{@location.latitude},#{@location.longitude}&days=5")

@@ -1,7 +1,7 @@
 class GearShop
 
-  def initialize(shop)
-    @shop = shop
+  def initialize(shop_data)
+    @shop = shop_data
   end
 
   def name

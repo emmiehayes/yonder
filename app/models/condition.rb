@@ -1,7 +1,7 @@
 class Condition 
 
-  def initialize(condition)
-    @condition = condition
+  def initialize(condition_data)
+    @condition = condition_data
   end
 
   def day 

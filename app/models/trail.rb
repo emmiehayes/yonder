@@ -1,37 +1,37 @@
 class Trail 
 
   def initialize(trail_data)
-    @trail_data = trail_data
+    @trail = trail_data
   end
   
   def name 
-    trail_data[:name]
+    @trail[:name]
   end 
   
   def length 
-    trail_data[:length]
+    @trail[:length]
   end
   
   def location 
-    trail_data[:location]
+    @trail[:location]
   end 
   
   def ascent 
-    trail_data[:ascent].to_s(:delimited)  
+    @trail[:ascent].to_s(:delimited)  
   end 
   
   def descent 
-    trail_data[:descent].to_s(:delimited)  
+    @trail[:descent].to_s(:delimited)  
   end 
   
   def highest_point 
-    trail_data[:high].to_s(:delimited)  
+    @trail[:high].to_s(:delimited)  
   end 
   
   def lowest_point 
-    trail_data[:low].to_s(:delimited)  
+    @trail[:low].to_s(:delimited)  
   end 
   
   private 
-  attr_reader :trail_data
+  attr_reader :trail
 end
