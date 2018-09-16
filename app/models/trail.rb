@@ -31,6 +31,14 @@ class Trail
   def lowest_point 
     @trail[:low].to_s(:delimited)  
   end 
+
+  def latitude
+    @trail[:latitude].to_f
+  end 
+
+  def longitude
+    @trail[:longitude].to_f
+  end
   
   private 
   attr_reader :trail

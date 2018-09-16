@@ -1,5 +1,5 @@
 class SearchPresenter 
-
+  
   def initialize(params) 
     @trail_service = MtbProjectService.new(params)
     @gear_shop_service = YelpService.new(params)
@@ -9,6 +9,14 @@ class SearchPresenter
 
   def city_state 
     "#{@location.city}, #{@location.state_abbr}"
+  end
+
+  def longitude
+    @location.longitude
+  end
+  
+  def latitude 
+    @location.latitude
   end
 
   def current_city_weather

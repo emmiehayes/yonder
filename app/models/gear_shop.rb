@@ -20,6 +20,14 @@ class GearShop
     @shop[:url]
   end
 
+  def latitude
+    @shop[:coordinates][:latitude]
+  end 
+
+  def longitude
+    @shop[:coordinates][:latitude]
+  end
+
   private 
   attr_reader :shop
 end

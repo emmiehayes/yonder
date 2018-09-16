@@ -6,17 +6,44 @@
 <div class="columns is-gapless">
   <div class="column is-9">
     <div class="container" id='map'>
-      <style> #map { width: 1000px; height: 400px; }</style>
+      <style> 
+        #map { width: 1000px; height: 400px; }
+        .mapboxgl-popup { max-width: 200px;}
+      </style>
         <script>
           mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
-          const map = new mapboxgl.Map({
-          container: 'map',
-          style: "mapbox://styles/emmiehayes/cjlyepdnv4ifp2ssykm1t5dpr",
-          center: [-105.175832, 38.649444],
-          zoom: 6.2});
-      </script>
+
+          var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/emmiehayes/cjm45uo9jaqnq2skyxt2g73jg',
+                center: ['<%=@presenter.longitude%>', '<%=@presenter.latitude%>'],
+                zoom: 11
+            });
+
+          // create the popup
+          '<% @presenter.trails_in_range.each do |trail| %>'
+          var popup = new mapboxgl.Popup({ offset: 25 })
+              .setText('<%=trail.name%>');
+
+          // create the marker
+          new mapboxgl.Marker()
+              .setLngLat(['<%=trail.longitude%>', '<%=trail.latitude%>'])
+              .setPopup(popup) // sets a popup on this marker
+              .addTo(map);
+          '<%end%>'
+
+          // geolocate control
+          map.addControl(new mapboxgl.GeolocateControl({
+              positionOptions: {
+                  enableHighAccuracy: true
+              },
+              trackUserLocation: true
+          }));
+        </script>
+      </div>
     </div>
-  </div>
+<%-#leave div open-%>    
+
 
 <!--Current Conditions -->
   <div class="column is-9">
@@ -63,13 +90,13 @@
               <div="column is-offset-1">
                 <%= image_tag (day.icon) %>
               </div>
-            <%-#don't close this div tag-%>
+            <%-#leave div open-%>
           </div>
         </article>
       </div>
     <% end %>
   </div>
-<%-#don't close this div tag-%>
+<%-#leave div open-%>
 
 <!--Trail List -->
 <div class=section>
@@ -94,7 +121,7 @@
       </div>
     <% end %>
   </div>
- <%-#don't close this div tag-%>
+ <%-#leave div open-%>
 
 <!--Gear Shops List -->
 <% unless current_user.nil?%>
@@ -118,5 +145,3 @@
     </div>
   </div>
 <% end %>
-     
-
