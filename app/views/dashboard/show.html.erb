@@ -44,7 +44,6 @@
     </div>
 <%-#leave div open-%>    
 
-
 <!--Current Conditions -->
   <div class="column is-9">
     <div class="container">
@@ -52,7 +51,7 @@
         <div class="title is-size-4">
           <p><%= @presenter.city_state %> <%= image_tag (@presenter.current_city_weather[:condition][:icon]) %></p>
         </div><hr>
-        <div class="subtitle">
+        <div class="subtitle" id='current-conditions'>
           <strong>Current Conditions:</strong>    
           <ul>
             <li>Skies: <%= @presenter.current_city_weather[:condition][:text] %></li>
@@ -68,56 +67,61 @@
 </div>
 
 <!--5 Day Forecast -->
-<div class=section>
+<div class="section">
   <div class="columns">
     <% @presenter.forecasted_city_weather.each do |day| %>
       <div class="column">
-        <article class="message is-small is-warning">
-          <div class="message-header has-text-white">
-            <strong><%= day.day %></strong>
-          </div>
-          <div class="message-body">
-            <div class="columns">
-              <div class="column is-one-half">
-                <ul>
-                  <li>Skies:<%= day.description %></li>
-                  <li>Min: <%= day.temp_min %>˚F</li>
-                  <li>Max: <%= day.temp_max %>˚F</li>
-                  <li>Humidity: <%= day.humidity %>%</li>
-                  <li>Max Winds: <%= day.max_winds %> mph</li>
-                </ul>
-              </div>
-              <div="column is-offset-1">
-                <%= image_tag (day.icon) %>
-              </div>
-            <%-#leave div open-%>
-          </div>
-        </article>
+        <div class='condition'>
+          <article class="message is-small is-warning">
+            <div class="message-header has-text-white">
+              <strong><%= day.day %></strong>
+            </div>
+            <div class="message-body">
+              <div class="columns">
+                <div class="column is-one-half">
+                  <ul>
+                    <li>Date: <%= day.date %></li>
+                    <li>Skies: <%= day.description %></li>
+                    <li>Min: <%= day.temp_min %>˚F</li>
+                    <li>Max: <%= day.temp_max %>˚F</li>
+                    <li>Humidity: <%= day.humidity %>%</li>
+                    <li>Max Winds: <%= day.max_winds %> mph</li>
+                  </ul>
+                </div>
+                <div="column is-offset-1">
+                  <%= image_tag (day.icon) %>
+                </div>
+              <%-#leave div open-%>
+            </div>
+          </article>
+        </div>
       </div>
     <% end %>
   </div>
 <%-#leave div open-%>
 
 <!--Trail List -->
-<div class=section>
+<div class="section">
   <div class="columns">
     <% @presenter.trails_in_range.each do |trail| %>
       <div class="column">
-        <article class="message is-small is-primary">
-          <div class="message-header has_text_">
-            <strong><%= trail.name %></strong>
-          </div>
-          <div class="message-body">
-            <ul>
-              <li>Location: <%= trail.location %></li>
-              <li>Length: <%= trail.length %> mi</li>
-              <li>Ascent: <%= trail.ascent %> ft</li>
-              <li>Descent: <%= trail.descent %> ft</li>
-              <li>Highest Point: <%= trail.highest_point %> ft</li>
-              <li>Lowest Point: <%= trail.lowest_point %> ft</li>
-            </ul>
-          </div>
-        </article>
+        <div class='trail'>
+          <article class="message is-small is-primary">
+            <div class="message-header has_text_">
+              <strong><%= trail.name %></strong>
+            </div>
+            <div class="message-body">
+              <ul>
+                <li>Location: <%= trail.location %></li>
+                <li>Length: <%= trail.length %> mi</li>
+                <li>Ascent: <%= trail.ascent %> ft</li>
+                <li>Descent: <%= trail.descent %> ft</li>
+                <li>Highest Point: <%= trail.highest_point %> ft</li>
+                <li>Lowest Point: <%= trail.lowest_point %> ft</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     <% end %>
   </div>
@@ -125,21 +129,23 @@
 
 <!--Gear Shops List -->
 <% unless current_user.nil?%>
-  <div class=section>
+  <div class="section">
     <div class="columns">
       <% @presenter.gear_in_range.each do |shop| %>
         <div class="column">
-          <article class="message is-small is-info">
-            <div class="message-header">
-              <strong><%= link_to shop.name, shop.url  %></strong>
-            </div>
-            <div class="message-body">
-              <ul>
-                <li> <%= shop.address %></li>
-                <li>Phone: <%= shop.phone_number %></li>
-              </ul>
-            </div>
-          </article>
+          <div class='gear-shop'>
+            <article class="message is-small is-info">
+              <div class="message-header">
+                <strong><%= link_to shop.name, shop.url  %></strong>
+              </div>
+              <div class="message-body">
+                <ul>
+                  <li> <%= shop.address %></li>
+                  <li>Phone: <%= shop.phone_number %></li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       <% end %>
     </div>

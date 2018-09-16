@@ -1,7 +1,7 @@
 class YelpService < Service
 
   def raw_gear_shops
-   parse[:businesses]
+    parse[:businesses]
   end
 
   private

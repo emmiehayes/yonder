@@ -3,7 +3,7 @@ class SearchPresenter
   def initialize(params) 
     @trail_service = MtbProjectService.new(params)
     @gear_shop_service = YelpService.new(params)
-    @condition_service = ApxWeatherService.new(params)
+    @condition_service = ApixuWeatherService.new(params)
     @location = Location.find(params[:location][:id].to_i)
   end
 

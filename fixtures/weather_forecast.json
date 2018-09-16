@@ -1,0 +1,197 @@
+{
+  "location": {
+    "name": "Breckenridge",
+    "region": "Colorado",
+    "country": "United States of America",
+    "lat": 39.5,
+    "lon": -106.04,
+    "tz_id": "America/Denver",
+    "localtime_epoch": 1537123420,
+    "localtime": "2018-09-16 12:43"
+  },
+  "current": {
+    "last_updated_epoch": 1537122608,
+    "last_updated": "2018-09-16 12:30",
+    "temp_c": 16,
+    "temp_f": 60.8,
+    "is_day": 1,
+    "condition": {
+      "text": "Partly cloudy",
+      "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+      "code": 1003
+    },
+    "wind_mph": 0,
+    "wind_kph": 0,
+    "wind_degree": 284,
+    "wind_dir": "WNW",
+    "pressure_mb": 1038,
+    "pressure_in": 31.1,
+    "precip_mm": 0,
+    "precip_in": 0,
+    "humidity": 29,
+    "cloud": 75,
+    "feelslike_c": 16,
+    "feelslike_f": 60.8,
+    "vis_km": 16,
+    "vis_miles": 9
+  },
+  "forecast": {
+    "forecastday": [
+      {
+        "date": "2018-09-16",
+        "date_epoch": 1537056000,
+        "day": {
+          "maxtemp_c": 19.2,
+          "maxtemp_f": 66.6,
+          "mintemp_c": 8.2,
+          "mintemp_f": 46.8,
+          "avgtemp_c": 13.2,
+          "avgtemp_f": 55.8,
+          "maxwind_mph": 7.8,
+          "maxwind_kph": 12.6,
+          "totalprecip_mm": 0.1,
+          "totalprecip_in": 0,
+          "avgvis_km": 20,
+          "avgvis_miles": 12,
+          "avghumidity": 32,
+          "condition": {
+            "text": "Patchy rain possible",
+            "icon": "//cdn.apixu.com/weather/64x64/day/176.png",
+            "code": 1063
+          },
+          "uv": 8.6
+        },
+        "astro": {
+          "sunrise": "06:46 AM",
+          "sunset": "07:11 PM",
+          "moonrise": "01:59 PM",
+          "moonset": "11:57 PM"
+        }
+      },
+      {
+        "date": "2018-09-17",
+        "date_epoch": 1537142400,
+        "day": {
+          "maxtemp_c": 19.2,
+          "maxtemp_f": 66.6,
+          "mintemp_c": 9.2,
+          "mintemp_f": 48.6,
+          "avgtemp_c": 12.7,
+          "avgtemp_f": 54.9,
+          "maxwind_mph": 8.9,
+          "maxwind_kph": 14.4,
+          "totalprecip_mm": 0,
+          "totalprecip_in": 0,
+          "avgvis_km": 19.9,
+          "avgvis_miles": 12,
+          "avghumidity": 33,
+          "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+            "code": 1003
+          },
+          "uv": 8.6
+        },
+        "astro": {
+          "sunrise": "06:47 AM",
+          "sunset": "07:09 PM",
+          "moonrise": "02:52 PM",
+          "moonset": "No moonset"
+        }
+      },
+      {
+        "date": "2018-09-18",
+        "date_epoch": 1537228800,
+        "day": {
+          "maxtemp_c": 19.2,
+          "maxtemp_f": 66.6,
+          "mintemp_c": 8.2,
+          "mintemp_f": 46.8,
+          "avgtemp_c": 12.7,
+          "avgtemp_f": 54.9,
+          "maxwind_mph": 9.8,
+          "maxwind_kph": 15.8,
+          "totalprecip_mm": 0,
+          "totalprecip_in": 0,
+          "avgvis_km": 19.9,
+          "avgvis_miles": 12,
+          "avghumidity": 33,
+          "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+            "code": 1003
+          },
+          "uv": 8.4
+        },
+        "astro": {
+          "sunrise": "06:48 AM",
+          "sunset": "07:08 PM",
+          "moonrise": "03:40 PM",
+          "moonset": "12:43 AM"
+        }
+      },
+      {
+        "date": "2018-09-19",
+        "date_epoch": 1537315200,
+        "day": {
+          "maxtemp_c": 17.2,
+          "maxtemp_f": 63,
+          "mintemp_c": 5.2,
+          "mintemp_f": 41.4,
+          "avgtemp_c": 11,
+          "avgtemp_f": 51.7,
+          "maxwind_mph": 11.9,
+          "maxwind_kph": 19.1,
+          "totalprecip_mm": 0.6,
+          "totalprecip_in": 0.02,
+          "avgvis_km": 19.5,
+          "avgvis_miles": 12,
+          "avghumidity": 35,
+          "condition": {
+            "text": "Moderate rain at times",
+            "icon": "//cdn.apixu.com/weather/64x64/day/299.png",
+            "code": 1186
+          },
+          "uv": 8
+        },
+        "astro": {
+          "sunrise": "06:49 AM",
+          "sunset": "07:06 PM",
+          "moonrise": "04:24 PM",
+          "moonset": "01:33 AM"
+        }
+      },
+      {
+        "date": "2018-09-20",
+        "date_epoch": 1537401600,
+        "day": {
+          "maxtemp_c": 14.2,
+          "maxtemp_f": 57.6,
+          "mintemp_c": 4.2,
+          "mintemp_f": 39.6,
+          "avgtemp_c": 8.8,
+          "avgtemp_f": 47.9,
+          "maxwind_mph": 11.9,
+          "maxwind_kph": 19.1,
+          "totalprecip_mm": 0,
+          "totalprecip_in": 0,
+          "avgvis_km": 20,
+          "avgvis_miles": 12,
+          "avghumidity": 27,
+          "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.apixu.com/weather/64x64/day/116.png",
+            "code": 1003
+          },
+          "uv": 0
+        },
+        "astro": {
+          "sunrise": "06:50 AM",
+          "sunset": "07:04 PM",
+          "moonrise": "05:04 PM",
+          "moonset": "02:26 AM"
+        }
+      }
+    ]
+  }
+}

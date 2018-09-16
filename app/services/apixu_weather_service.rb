@@ -1,4 +1,4 @@
-class ApxWeatherService < Service
+class ApixuWeatherService < Service
 
   def raw_current
     parse[:current]

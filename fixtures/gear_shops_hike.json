@@ -1,0 +1,222 @@
+{
+  "businesses": [
+    {
+      "id": "pvMLljNCesfB299kK_0_1Q",
+      "alias": "rocky-mountain-underground-breckenridge",
+      "name": "Rocky Mountain Underground",
+      "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/prZXHMmCOCpmhYDwkSrjrg/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/rocky-mountain-underground-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 17,
+      "categories": [
+        {
+          "alias": "outdoorgear",
+          "title": "Outdoor Gear"
+        },
+        {
+          "alias": "skishops",
+          "title": "Ski & Snowboard Shops"
+        },
+        {
+          "alias": "beerbar",
+          "title": "Beer Bar"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.4815254211426,
+        "longitude": -106.045761108398
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "114 S Main St",
+        "address2": null,
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "114 S Main St",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704061209",
+      "display_phone": "(970) 406-1209",
+      "distance": 2034.9559463647931
+    },
+    {
+      "id": "9_N1iqAF4h9AcmjXuIvzBA",
+      "alias": "mountain-outfitters-breckenridge",
+      "name": "Mountain Outfitters",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/mQ4riS0wjqfq6T0lCtgTRg/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/mountain-outfitters-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 15,
+      "categories": [
+        {
+          "alias": "outdoorgear",
+          "title": "Outdoor Gear"
+        },
+        {
+          "alias": "sportswear",
+          "title": "Sports Wear"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.4814716279507,
+        "longitude": -106.044726893306
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "112 S Ridge Rd",
+        "address2": "",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "112 S Ridge Rd",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704532201",
+      "display_phone": "(970) 453-2201",
+      "distance": 2012.255536265847
+    },
+    {
+      "id": "V3RBVPfUPEvUtf0IeJWLMQ",
+      "alias": "craniologie-breckenridge",
+      "name": "Craniologie",
+      "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/DRuKwrXwHPDg5I3P8UN_oA/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/craniologie-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 16,
+      "categories": [
+        {
+          "alias": "outdoorgear",
+          "title": "Outdoor Gear"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.48234,
+        "longitude": -106.04647
+      },
+      "transactions": [],
+      "price": "$$$",
+      "location": {
+        "address1": "101 N Main St",
+        "address2": "Unit A",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "101 N Main St",
+          "Unit A",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704236354",
+      "display_phone": "(970) 423-6354",
+      "distance": 1948.5492521798533
+    },
+    {
+      "id": "F1cVubsyTYxv5y0Xi-D08A",
+      "alias": "ridden-breckenridge",
+      "name": "Ridden",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/eAvYjP6mLsag1f_ljGpLHQ/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/ridden-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 31,
+      "categories": [
+        {
+          "alias": "vintage",
+          "title": "Used, Vintage & Consignment"
+        },
+        {
+          "alias": "skishops",
+          "title": "Ski & Snowboard Shops"
+        },
+        {
+          "alias": "biketours",
+          "title": "Bike tours"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.47691,
+        "longitude": -106.044344
+      },
+      "transactions": [],
+      "price": "$",
+      "location": {
+        "address1": "520 S Main St",
+        "address2": "",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "520 S Main St",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704532055",
+      "display_phone": "(970) 453-2055",
+      "distance": 2535.7127601765915
+    },
+    {
+      "id": "kVFuEAU5NwBDJZWom2vC9A",
+      "alias": "great-outdoor-clothing-breckenridge",
+      "name": "Great Outdoor Clothing",
+      "image_url": "",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/great-outdoor-clothing-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "outdoorgear",
+          "title": "Outdoor Gear"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 39.48024,
+        "longitude": -106.04629
+      },
+      "transactions": [],
+      "location": {
+        "address1": "211 S Main St",
+        "address2": "",
+        "address3": "Space A",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "211 S Main St",
+          "Space A",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "",
+      "display_phone": "",
+      "distance": 2184.5027914609977
+    }
+  ],
+  "total": 379,
+  "region": {
+    "center": {
+      "longitude": -106.0433,
+      "latitude": 39.4997
+    }
+  }
+}

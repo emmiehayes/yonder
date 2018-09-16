@@ -1,0 +1,242 @@
+{
+  "businesses": [
+    {
+      "id": "ngKqyvmcBCvGef1tZ8TRIg",
+      "alias": "elevation-ski-and-bike-breckenridge-3",
+      "name": "Elevation Ski & Bike",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/LZ7mcDlvjG2baVBx6PE-5A/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/elevation-ski-and-bike-breckenridge-3?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 22,
+      "categories": [
+        {
+          "alias": "bikerentals",
+          "title": "Bike Rentals"
+        },
+        {
+          "alias": "bike_repair_maintenance",
+          "title": "Bike Repair/Maintenance"
+        },
+        {
+          "alias": "bikes",
+          "title": "Bikes"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.4866957,
+        "longitude": -106.0460259
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "324 N Main St",
+        "address2": null,
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "324 N Main St",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704532499",
+      "display_phone": "(970) 453-2499",
+      "distance": 1464.8068197850207
+    },
+    {
+      "id": "vwf0CeiEozCWc3IglQqkOQ",
+      "alias": "alpine-sports-breckenridge-4",
+      "name": "Alpine Sports",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/F6dIyuQkHWWwcy69OgtRGw/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/alpine-sports-breckenridge-4?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 31,
+      "categories": [
+        {
+          "alias": "bikerentals",
+          "title": "Bike Rentals"
+        },
+        {
+          "alias": "outdoorgear",
+          "title": "Outdoor Gear"
+        },
+        {
+          "alias": "skishops",
+          "title": "Ski & Snowboard Shops"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.4904928,
+        "longitude": -106.0478147
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "435 North Park Ave",
+        "address2": null,
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "435 North Park Ave",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704538100",
+      "display_phone": "(970) 453-8100",
+      "distance": 1094.634117656569
+    },
+    {
+      "id": "9sqOdSJDIFyxDafClYB8VQ",
+      "alias": "breck-bike-guides-breckenridge",
+      "name": "Breck Bike Guides",
+      "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/6kd60Kj6K9fm-unHLkQkpw/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/breck-bike-guides-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 16,
+      "categories": [
+        {
+          "alias": "bikerentals",
+          "title": "Bike Rentals"
+        },
+        {
+          "alias": "mountainbiking",
+          "title": "Mountain Biking"
+        },
+        {
+          "alias": "tours",
+          "title": "Tours"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.477547639963,
+        "longitude": -106.045269370078
+      },
+      "transactions": [],
+      "location": {
+        "address1": "411 S Main St",
+        "address2": "Ste 12",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "411 S Main St",
+          "Ste 12",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19703939000",
+      "display_phone": "(970) 393-9000",
+      "distance": 2469.01804593258
+    },
+    {
+      "id": "Fru64xNqbejgKVYtk4rWxw",
+      "alias": "carvers-ski-and-bike-rentals-breckenridge",
+      "name": "Carvers Ski & Bike Rentals",
+      "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/EqAQDylBiHEvsLTE25HoFQ/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/carvers-ski-and-bike-rentals-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 27,
+      "categories": [
+        {
+          "alias": "bikerentals",
+          "title": "Bike Rentals"
+        },
+        {
+          "alias": "skishops",
+          "title": "Ski & Snowboard Shops"
+        },
+        {
+          "alias": "bike_repair_maintenance",
+          "title": "Bike Repair/Maintenance"
+        }
+      ],
+      "rating": 4.5,
+      "coordinates": {
+        "latitude": 39.48382,
+        "longitude": -106.04649
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "203 N Main St",
+        "address2": "",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "203 N Main St",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704530132",
+      "display_phone": "(970) 453-0132",
+      "distance": 1780.0341211307423
+    },
+    {
+      "id": "GeaAbXPyHkvnYBqLnXmmEQ",
+      "alias": "pedego-electric-bikes-breckenridge-breckenridge",
+      "name": "Pedego Electric Bikes Breckenridge",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ppeICakac7egVD4RIBcVkg/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/pedego-electric-bikes-breckenridge-breckenridge?adjust_creative=PI7xUURsMxMpCjjA05llhA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PI7xUURsMxMpCjjA05llhA",
+      "review_count": 4,
+      "categories": [
+        {
+          "alias": "bikes",
+          "title": "Bikes"
+        },
+        {
+          "alias": "bikerentals",
+          "title": "Bike Rentals"
+        },
+        {
+          "alias": "tours",
+          "title": "Tours"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 39.48234,
+        "longitude": -106.04647
+      },
+      "transactions": [],
+      "price": "$$",
+      "location": {
+        "address1": "101 N Main St",
+        "address2": "Unit A",
+        "address3": "",
+        "city": "Breckenridge",
+        "zip_code": "80424",
+        "country": "US",
+        "state": "CO",
+        "display_address": [
+          "101 N Main St",
+          "Unit A",
+          "Breckenridge, CO 80424"
+        ]
+      },
+      "phone": "+19704236354",
+      "display_phone": "(970) 423-6354",
+      "distance": 1948.5492521798533
+    }
+  ],
+  "total": 31,
+  "region": {
+    "center": {
+      "longitude": -106.0433,
+      "latitude": 39.4997
+    }
+  }
+}

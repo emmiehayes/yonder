@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :activity do
-    title { Faker::Superhero.name }
+    title { "Mountain Biking" }
   end
 end

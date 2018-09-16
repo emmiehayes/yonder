@@ -9,7 +9,7 @@ class Condition
   end
 
   def date 
-    @condition[:date].to_datetime.strftime('%B %d, %Y')
+    @condition[:date].to_datetime.strftime('%b %d')
   end
 
   def temp_min 
