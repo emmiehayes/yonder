@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917191126) do
+ActiveRecord::Schema.define(version: 20180917194735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20180917191126) do
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "phone"
+    t.string "price"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_shops_on_activity_id"
   end
 
   create_table "trails", force: :cascade do |t|
@@ -58,5 +71,6 @@ ActiveRecord::Schema.define(version: 20180917191126) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "shops", "activities"
   add_foreign_key "trails", "activities"
 end
