@@ -1,48 +1,35 @@
 <!--Search Bar Index -->
 <%= render partial: 'form' %>
-<br>
 
-<!--MapBox -->
+
+
+<!--MapBox Base and Trail Points -->
 <div class="columns is-gapless">
   <div class="column is-9">
     <div class="container" id='map'>
       <style> 
-        #map { width: 1000px; height: 400px; }
-        .mapboxgl-popup { max-width: 200px;}
+        #map { width: 1000px; height: 400px; } 
       </style>
-        <script>
-          mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
 
-          var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/emmiehayes/cjm45uo9jaqnq2skyxt2g73jg',
-                center: ['<%=@presenter.longitude%>', '<%=@presenter.latitude%>'],
-                zoom: 11
-            });
-
-          // create the popup
-          '<% @presenter.trails_in_range.each do |trail| %>'
-          var popup = new mapboxgl.Popup({ offset: 25 })
-              .setText('<%=trail.name%>');
-
-          // create the marker
-          new mapboxgl.Marker()
-              .setLngLat(['<%=trail.longitude%>', '<%=trail.latitude%>'])
-              .setPopup(popup) // sets a popup on this marker
-              .addTo(map);
-          '<%end%>'
-
-          // geolocate control
-          map.addControl(new mapboxgl.GeolocateControl({
-              positionOptions: {
-                  enableHighAccuracy: true
-              },
-              trackUserLocation: true
-          }));
-        </script>
-      </div>
+        var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/emmiehayes/cjm45uo9jaqnq2skyxt2g73jg', 
+        center: ['<%=@presenter.longitude%>', '<%=@presenter.latitude%>'], zoom: 11});
+        
+        '<% @presenter.trails_in_range.each do |trail| %>'
+        var popup = new mapboxgl.Popup({ offset: 25 })
+          .setText('<%=trail.name%>');
+  
+        var marker = new mapboxgl.Marker()
+          .setLngLat(['<%=trail.longitude%>', '<%=trail.latitude%>'])
+          .setPopup(popup) 
+          .addTo(map);
+        '<%end%>'
+      </script>
     </div>
-<%-#leave div open-%>    
+  </div>
+
+
 
 <!--Current Conditions -->
   <div class="column is-9">
@@ -66,39 +53,42 @@
   </div>
 </div>
 
+
+
 <!--5 Day Forecast -->
 <div class="section">
   <div class="columns">
     <% @presenter.forecasted_city_weather.each do |day| %>
-      <div class="column">
-        <div class='condition'>
-          <article class="message is-small is-warning">
-            <div class="message-header has-text-white">
-              <strong><%= day.day %></strong>
+    <div class="column">
+      <div class='condition'>
+        <article class="message is-small is-warning">
+          <div class="message-header has-text-white">
+            <strong><%= day.day %></strong>
+          </div>
+          <div class="message-body">
+            <div class="columns">
+              <div class="column is-one-half">
+                <ul>
+                  <li>Date: <%= day.date %></li>
+                  <li>Skies: <%= day.description %></li>
+                  <li>Min: <%= day.temp_min %>˚F</li>
+                  <li>Max: <%= day.temp_max %>˚F</li>
+                  <li>Humidity: <%= day.humidity %>%</li>
+                  <li>Max Winds: <%= day.max_winds %> mph</li>
+                </ul>
+              </div>
+              <div="column is-offset-1">
+                <%= image_tag (day.icon) %>
+              </div>
             </div>
-            <div class="message-body">
-              <div class="columns">
-                <div class="column is-one-half">
-                  <ul>
-                    <li>Date: <%= day.date %></li>
-                    <li>Skies: <%= day.description %></li>
-                    <li>Min: <%= day.temp_min %>˚F</li>
-                    <li>Max: <%= day.temp_max %>˚F</li>
-                    <li>Humidity: <%= day.humidity %>%</li>
-                    <li>Max Winds: <%= day.max_winds %> mph</li>
-                  </ul>
-                </div>
-                <div="column is-offset-1">
-                  <%= image_tag (day.icon) %>
-                </div>
-              <%-#leave div open-%>
-            </div>
-          </article>
-        </div>
+        </article>
       </div>
-    <% end %>
-  </div>
-<%-#leave div open-%>
+    </div>
+  <% end %>
+</div>
+
+
+
 
 <!--Trail List -->
 <div class="section">
@@ -125,29 +115,48 @@
       </div>
     <% end %>
   </div>
- <%-#leave div open-%>
+</div>
 
-<!--Gear Shops List -->
+
+
+
+<!--Gear Shops List and Corresponding MapBox Pins-->
 <% unless current_user.nil?%>
-  <div class="section">
-    <div class="columns">
-      <% @presenter.gear_in_range.each do |shop| %>
-        <div class="column">
-          <div class='gear-shop'>
-            <article class="message is-small is-info">
-              <div class="message-header">
-                <strong><%= link_to shop.name, shop.url  %></strong>
-              </div>
-              <div class="message-body">
-                <ul>
-                  <li> <%= shop.address %></li>
-                  <li>Phone: <%= shop.phone_number %></li>
-                </ul>
-              </div>
-            </article>
-          </div>
+<script>
+  '<% @presenter.gear_in_range.each do |shop| %>'
+  var popup = new mapboxgl.Popup({ offset: 25 })
+      .setText('<%=shop.name%>');
+
+  new mapboxgl.Marker()
+      .setLngLat(['<%=shop.longitude%>', '<%=shop.latitude%>'])
+      .setPopup(popup)
+      .addTo(map);
+  '<%end%>'
+
+  map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: { enableHighAccuracy: true},
+      trackUserLocation: true }));
+</script>
+
+<div class="section">
+  <div class="columns">
+    <% @presenter.gear_in_range.each do |shop| %>
+      <div class="column">
+        <div class='gear-shop'>
+          <article class="message is-small is-info">
+            <div class="message-header">
+              <strong><%= link_to shop.name, shop.url  %></strong>
+            </div>
+            <div class="message-body">
+              <ul>
+                <li> <%= shop.address %></li>
+                <li>Phone: <%= shop.phone_number %></li>
+              </ul>
+            </div>
+          </article>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
 <% end %>

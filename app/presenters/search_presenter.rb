@@ -29,7 +29,7 @@ class SearchPresenter
     end
   end
 
-   def trails_in_range 
+  def trails_in_range 
     @trail_service.raw_trails.map do |trail|
       Trail.new(trail)
     end

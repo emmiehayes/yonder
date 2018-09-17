@@ -25,7 +25,7 @@ class GearShop
   end 
 
   def longitude
-    @shop[:coordinates][:latitude]
+    @shop[:coordinates][:longitude]
   end
 
   private 
