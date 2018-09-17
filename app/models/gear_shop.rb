@@ -9,7 +9,7 @@ class GearShop
   end
 
   def phone_number
-    @shop[:phone]
+    @shop[:display_phone]
   end
 
   def address 
@@ -18,6 +18,10 @@ class GearShop
 
   def url
     @shop[:url]
+  end
+
+  def price 
+    @shop[:price]
   end
 
   def latitude

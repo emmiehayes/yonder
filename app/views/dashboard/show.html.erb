@@ -2,7 +2,6 @@
 <%= render partial: 'form' %>
 
 
-
 <!--MapBox Base and Trail Points -->
 <div class="columns is-gapless">
   <div class="column is-9">
@@ -29,8 +28,6 @@
     </div>
   </div>
 
-
-
 <!--Current Conditions -->
   <div class="column is-9">
     <div class="container">
@@ -52,8 +49,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!--5 Day Forecast -->
 <div class="section">
@@ -86,9 +81,7 @@
     </div>
   <% end %>
 </div>
-
-
-
+</div>
 
 <!--Trail List -->
 <div class="section">
@@ -115,10 +108,7 @@
       </div>
     <% end %>
   </div>
-</div>
-
-
-
+  </div>
 
 <!--Gear Shops List and Corresponding MapBox Pins-->
 <% unless current_user.nil?%>
@@ -137,7 +127,6 @@
       positionOptions: { enableHighAccuracy: true},
       trackUserLocation: true }));
 </script>
-
 <div class="section">
   <div class="columns">
     <% @presenter.gear_in_range.each do |shop| %>
@@ -151,6 +140,7 @@
               <ul>
                 <li> <%= shop.address %></li>
                 <li>Phone: <%= shop.phone_number %></li>
+                <li>Price: <%= shop.price %></li>
               </ul>
             </div>
           </article>
