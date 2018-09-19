@@ -1,0 +1,30 @@
+<!--Single Trail -->
+
+<h1>Invite a Friend</h1>
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container is-fluid has-text-centered">
+    <h1>Enter phone number below to send a text:</h1>
+      <%= form_for :current_user, :url => { :controller => "messages", :action => "create" } do |f| %>
+        <div class="select is-info">
+            <%= f.label :phone %>
+            <%= f.phone_field :phone_number %>
+            <%= f.hidden_field :trail_id, :value => @trail.id %>
+        </div>
+          <%= submit_tag "Submit", class: "button is-outlined is-warning" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<br>
+
+<div class="section">
+  <strong><%= @trail.name %></strong>
+    <ul>
+      <li>Location: <%= @trail.location %></li>
+      <li>Length: <%= @trail.length %> mi</li>
+      <li>Highest Point: <%= @trail.elevation_high %> ft</li>
+      <li>Lowest Point: <%= @trail.elevation_low %> ft</li>
+    </ul>
+  </div>

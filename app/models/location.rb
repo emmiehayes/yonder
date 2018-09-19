@@ -1,8 +1,8 @@
 class Location < ApplicationRecord
-  validates_presence_of :city, :state_abbr, :latitude, :longitude
+  validates_presence_of :city, :state, :latitude, :longitude
 
-  def city_state
-    "#{city}, #{state_abbr}"
+  def select_format
+    "#{city}, #{state}"
   end
 
   def lat_long

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :activities, except: [:index]
   end
 
-
+  resources :trails, only: [:show]
+  resources :messages, only: [:create]
 end
