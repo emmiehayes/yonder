@@ -89,9 +89,15 @@
       <div class="column">
         <div class='trail'>
           <article class="message is-small is-primary">
+          <% if current_user %>
+            <div class="message-header has_text_">
+              <strong><%= link_to trail.name, trail_path(trail), method: :get %></strong>
+            </div>
+            <% else %>
             <div class="message-header has_text_">
               <strong><%= trail.name %></strong>
             </div>
+            <% end %>
             <div class="message-body">
               <ul>
                 <li>Location: <%= trail.location %></li>

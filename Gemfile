@@ -16,6 +16,7 @@ gem 'bulma-rails', '~> 0.7.1'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

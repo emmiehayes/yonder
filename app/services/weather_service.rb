@@ -1,4 +1,4 @@
-class ApixuWeatherService
+class WeatherService
 
   def initialize(params)
     @location =  Location.find(params[:location][:id].to_i)
@@ -24,5 +24,8 @@ class ApixuWeatherService
       faraday.adapter Faraday.default_adapter
     end
   end
+
+  private 
+  attr_reader :location
 end
 

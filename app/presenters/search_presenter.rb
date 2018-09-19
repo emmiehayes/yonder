@@ -1,7 +1,7 @@
 class SearchPresenter 
   def initialize(params) 
     @location = Location.find(params[:location][:id].to_i)
-    @service = ApixuWeatherService.new(params)
+    @service = WeatherService.new(params)
   end
 
   def city_state 
