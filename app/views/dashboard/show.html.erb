@@ -1,7 +1,6 @@
 <!--Search Bar Index -->
 <%= render partial: 'form' %>
 
-
 <!--MapBox Base and Trail Points -->
 <div class="columns is-gapless">
   <div class="column is-9">
@@ -11,7 +10,6 @@
       </style>
       <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZW1taWVoYXllcyIsImEiOiJjamx4NDhkczYwcDY3M3BwZ212bmRiOXZsIn0.5-yjf3hfBkhRNUCB9QzcjA';
-
         var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/emmiehayes/cjm45uo9jaqnq2skyxt2g73jg', 
         center: ['<%=@presenter.longitude%>', '<%=@presenter.latitude%>'], zoom: 11});
         
@@ -53,7 +51,7 @@
 <!--5 Day Forecast -->
 <div class="section">
   <div class="columns">
-    <% @presenter.forecasted_city_weather.each do |day| %>
+  <% @presenter.forecasted_city_weather.each do |day| %>
     <div class="column">
       <div class='condition'>
         <article class="message is-small is-warning">
@@ -76,12 +74,13 @@
                 <%= image_tag (day.icon) %>
               </div>
             </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-</div>
+
 
 <!--Trail List -->
 <div class="section">
@@ -106,6 +105,7 @@
       </div>
     <% end %>
   </div>
+</div>
 
 
 <!--Gear Shops List and Corresponding MapBox Pins-->
@@ -114,13 +114,11 @@
   '<% @presenter.gear_in_range.each do |shop| %>'
   var popup = new mapboxgl.Popup({ offset: 25 })
       .setText('<%=shop.name%>');
-
   new mapboxgl.Marker()
       .setLngLat(['<%=shop.longitude%>', '<%=shop.latitude%>'])
       .setPopup(popup)
       .addTo(map);
   '<%end%>'
-
   map.addControl(new mapboxgl.GeolocateControl({
       positionOptions: { enableHighAccuracy: true},
       trackUserLocation: true }));
@@ -136,7 +134,7 @@
             </div>
             <div class="message-body">
               <ul>
-                <li> <%= shop.address %></li>
+                <li>Address: <%= shop.address %></li>
                 <li>Phone: <%= shop.phone %></li>
                 <li>Price: <%= shop.price %></li>
               </ul>

@@ -5,8 +5,8 @@ FactoryBot.define do
     address         { Faker::Address.city }
     phone           { Faker::PhoneNumber.cell_phone }
     price           { '$$$' }
-    latitude        { Faker::Address.latitude }
-    longitude       { Faker::Address.longitude }
+    latitude        { 39.4997 }
+    longitude       { -106.0433 }
     url             { Faker::Internet.url }
     created_at      { Faker::Time.between(2.days.ago, Time.now, :all) }
     updated_at      { Faker::Time.between(2.days.ago, Time.now, :all) }    
