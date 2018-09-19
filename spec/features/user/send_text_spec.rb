@@ -29,11 +29,10 @@ describe 'logged in user' do
     expect(current_path).to eq(trail_path(@trail))
     expect(page).to have_content(@trail.name)
     expect(page).to have_content(@trail.location)
-    expect(page).to have_content('Invite a Friend')
-    expect(page).to have_content('Enter phone number below to send a text')
+    expect(page).to have_content("Invite a Friend to Ride #{@trail.name}!")
 
     fill_in :current_user_phone_number, with: ENV["TWILIO_TO_PHONE"]
-    click_button 'Submit'
+    click_button 'Send Text'
 
     expect(current_path).to eq(trail_path(@trail))
     end
