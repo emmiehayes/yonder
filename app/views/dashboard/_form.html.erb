@@ -4,10 +4,7 @@
     <div class="container is-fluid has-text-centered">
       <%= form_tag :search, method: :get do %>
         <div class="select is-info">
-          <%= collection_select :location, :id, Location.all, :id, :city_state, prompt: 'select location' %>
-        </div>
-        <div class="select is-info">
-          <%= collection_select :activity, :id, Activity.all, :id, :title, prompt: 'select activity' %>
+          <%= collection_select :location, :id, Location.all, :id, :select_format, prompt: 'select location' %>
         </div>
           <%= submit_tag "Search", method: :get, class: "button is-outlined is-warning" %>
         </div>

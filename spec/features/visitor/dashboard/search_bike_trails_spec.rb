@@ -18,7 +18,6 @@ describe 'visitor visiting /dashboard' do
     expect(current_path).to eq(dashboard_path)
     
     select 'Breckenridge', from: :location_id
-    select 'Mountain Biking', from: :activity_id
     click_button 'Search'
 
     expect(current_path).to eq(search_path)

@@ -97,10 +97,8 @@
               <ul>
                 <li>Location: <%= trail.location %></li>
                 <li>Length: <%= trail.length %> mi</li>
-                <li>Ascent: <%= trail.ascent %> ft</li>
-                <li>Descent: <%= trail.descent %> ft</li>
-                <li>Highest Point: <%= trail.highest_point %> ft</li>
-                <li>Lowest Point: <%= trail.lowest_point %> ft</li>
+                <li>Highest Point: <%= trail.elevation_high %> ft</li>
+                <li>Lowest Point: <%= trail.elevation_low %> ft</li>
               </ul>
             </div>
           </article>
@@ -108,7 +106,7 @@
       </div>
     <% end %>
   </div>
-  </div>
+
 
 <!--Gear Shops List and Corresponding MapBox Pins-->
 <% unless current_user.nil?%>
@@ -139,7 +137,7 @@
             <div class="message-body">
               <ul>
                 <li> <%= shop.address %></li>
-                <li>Phone: <%= shop.phone_number %></li>
+                <li>Phone: <%= shop.phone %></li>
                 <li>Price: <%= shop.price %></li>
               </ul>
             </div>

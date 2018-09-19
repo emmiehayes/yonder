@@ -19,11 +19,9 @@ describe 'default user visiting /dashboard' do
     json_response_gear_bikes = File.open('./fixtures/gear_shops_bike.json')
     stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.4997&limit=5&longitude=-106.0433&term=#{term}").to_return(status: 200, body: json_response_gear_bikes)
     
-
     visit dashboard_path
 
     select 'Breckenridge', from: :location_id
-    select 'Mountain Biking', from: :activity_id
 
     click_button 'Search'
 
@@ -49,7 +47,15 @@ describe 'default user visiting /dashboard' do
       expect(page).to have_content('Humidity')
       expect(page).to have_content('Max Winds')
     end
+
+    expect(page).to have_css('.gear-shop', count: 5)
     
+    within(first('.gear-shop')) do
+      expect(page).to have_content('Elevation Ski & Bike')
+      expect(page).to have_content('324 N Main St')
+      expect(page).to have_content('+19704532499')
+    end
+
     expect(page).to have_css('.trail', count: 5)
     
     within(first('.trail')) do
@@ -59,14 +65,6 @@ describe 'default user visiting /dashboard' do
       expect(page).to have_content('Descent')
       expect(page).to have_content('Highest Point')
       expect(page).to have_content('Lowest Point')
-    end
-
-    expect(page).to have_css('.gear-shop', count: 5)
-    
-    within(first('.gear-shop')) do
-      expect(page).to have_content('Elevation Ski & Bike')
-      expect(page).to have_content('324 N Main St')
-      expect(page).to have_content('+19704532499')
     end
   end
 end

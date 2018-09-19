@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180917194735) do
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
-    t.string "state_abbr"
+    t.string "state"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
@@ -31,31 +31,29 @@ ActiveRecord::Schema.define(version: 20180917194735) do
   end
 
   create_table "shops", force: :cascade do |t|
+    t.string "sid"
     t.string "name"
-    t.string "location"
+    t.string "address"
     t.string "phone"
     t.string "price"
     t.float "longitude"
     t.float "latitude"
-    t.bigint "activity_id"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_shops_on_activity_id"
   end
 
   create_table "trails", force: :cascade do |t|
+    t.string "tid"
     t.string "name"
     t.string "location"
     t.string "length"
-    t.string "difficulty"
     t.string "elevation_high"
     t.string "elevation_low"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_trails_on_activity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +69,4 @@ ActiveRecord::Schema.define(version: 20180917194735) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "shops", "activities"
-  add_foreign_key "trails", "activities"
 end

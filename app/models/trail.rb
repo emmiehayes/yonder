@@ -1,4 +1,6 @@
 class Trail < ApplicationRecord
-  validates_presence_of :name, :location, :length, :difficulty, :elevation_high, :elevation_low, :latitude, :longitude
-  belongs_to :activity
+  reverse_geocoded_by :latitude, :longitude
+  validates_uniqueness_of :tid
+  validates_presence_of :name, :location, :length, :elevation_high, :elevation_low, :latitude, :longitude
 end
+

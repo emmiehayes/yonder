@@ -1,14 +1,11 @@
 class SearchPresenter 
-  
   def initialize(params) 
-    @trail_service = MtbProjectService.new(params)
-    @gear_shop_service = YelpService.new(params)
-    @condition_service = ApixuWeatherService.new(params)
     @location = Location.find(params[:location][:id].to_i)
+    @service = ApixuWeatherService.new(params)
   end
 
   def city_state 
-    "#{@location.city}, #{@location.state_abbr}"
+    "#{@location.city}, #{@location.state}"
   end
 
   def longitude
@@ -20,27 +17,23 @@ class SearchPresenter
   end
 
   def current_city_weather
-    @condition_service.raw_current
+    @service.raw_current
   end
   
   def forecasted_city_weather
-    @condition_service.raw_forecast.map do |day|
+    @service.raw_forecast.map do |day|
       Condition.new(day)
     end
   end
 
-  def trails_in_range 
-    @trail_service.raw_trails.map do |trail|
-      Trail.new(trail)
-    end
+  def trails_in_range
+    Trail.near([@location.latitude,@location.longitude], 30).limit(5)
   end
 
   def gear_in_range
-    @gear_shop_service.raw_gear_shops.map do |shop|
-      GearShop.new(shop)
-    end
+    Shop.near([@location.latitude,@location.longitude], 30).limit(5)
   end
 
-  private 
-  attr_reader :trail_service, :gear_shop_service, :condition_service, :location
+  private
+  attr_reader :location, :service
 end
