@@ -3,6 +3,7 @@
 Yonder consumes three APIs: MTB Project, APIXU Weather, & Yelp to make trail and gear shop recommendations based on user location search.  All recommendations are plotted on a map and users can send invitation alerts via SMS using Twilio.  This was a solo project that I managed over 2 weeks, from wireframes through deployment.
 
 <img alt="yonder-screen" src="https://cl.ly/2c882211f0e4/Screen%20Shot%202018-09-22%20at%201.38.32%20PM.jpg">
+<img alt="yonder-search" src="https://cl.ly/39415e018c9d/Screen%20Shot%202018-09-20%20at%201.12.38%20PM.jpg">
 
 
 Production App: https://yonder-go.herokuapp.com
