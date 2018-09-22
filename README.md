@@ -4,8 +4,9 @@ Yonder consumes three APIs: MTB Project, APIXU Weather, & Yelp to make trail and
 
 Production App: https://yonder-go.herokuapp.com
 
-Ruby Version: 2.4.1 
-Rails Version: 5.1.5
+- Ruby Version: 2.4.1
+
+- Rails Version: 5.1.5
 
 Setup
 To run this project: 
