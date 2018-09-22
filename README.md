@@ -21,13 +21,15 @@ rails s
 ```
 
 Testing
-This project uses RSpec along with Webmock and Capybara for testing and can be run with the command `rspec`
-You may need to rake db:test:prepare before running the tests.
+
+- This project uses RSpec along with Webmock and Capybara for testing and can be run with the command `rspec`
+- You may need to rake db:test:prepare before running the tests.
 
 Technologies:
-Mapbox
-Geocoding
-Twilio
-Google OAuth2
-Heroku
-Bulma
+
+- Mapbox
+- Geocoding
+- Twilio
+- Google OAuth2
+- Heroku
+- Bulma
