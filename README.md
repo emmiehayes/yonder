@@ -9,7 +9,7 @@ Production App: https://yonder-go.herokuapp.com
 - Rails Version: 5.1.5
 
 Setup
-To run this project: 
+ 
 ```ruby
 git clone git@github.com:emmiehayes/yonder.git
 cd yonder
