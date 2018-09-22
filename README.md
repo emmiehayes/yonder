@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Yonder consumes three APIs: MTB Project, APIXU Weather, & Yelp to make trail and gear shop recommendations based on user location search.  All recommendations are plotted on a map and users can send invitation alerts via SMS using Twilio.  This was a solo project that I managed over 2 weeks, from wireframes through deployment.
 
-Things you may want to cover:
+Production App: https://yonder-go.herokuapp.com
 
-* Ruby version
+Ruby Version: 2.4.1 
+Rails Version: 5.1.5
 
-* System dependencies
+Setup
+To run this project: 
+```ruby
+git clone git@github.com:emmiehayes/yonder.git
+cd yonder
+bundle install
+rake db:{create,migrate,seed}
+rake call:trails
+rake call:shops
+rails s
+```
 
-* Configuration
+Testing
+This project uses RSpec along with Webmock and Capybara for testing and can be run with the command `rspec`
+You may need to rake db:test:prepare before running the tests.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Technologies:
+Mapbox
+Geocoding
+Twilio
+Google OAuth2
+Heroku
+Bulma
